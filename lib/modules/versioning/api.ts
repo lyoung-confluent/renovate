@@ -1,9 +1,11 @@
+import * as alpine from './alpine';
 import * as amazonMachineImage from './aws-machine-image';
 import * as azureRestApi from './azure-rest-api';
 import * as bazelModule from './bazel-module';
 import * as cargo from './cargo';
 import * as composer from './composer';
 import * as conan from './conan';
+import * as chainguard from './chainguard';
 import * as deb from './deb';
 import * as debian from './debian';
 import * as docker from './docker';
@@ -41,12 +43,14 @@ import * as unity3d from './unity3d';
 const api = new Map<string, VersioningApi | VersioningApiConstructor>();
 export default api;
 
+api.set(alpine.id, alpine.api);
 api.set(amazonMachineImage.id, amazonMachineImage.api);
 api.set(azureRestApi.id, azureRestApi.api);
 api.set(bazelModule.id, bazelModule.api);
 api.set(cargo.id, cargo.api);
 api.set(composer.id, composer.api);
 api.set(conan.id, conan.api);
+api.set(chainguard.id, chainguard.api);
 api.set(deb.id, deb.api);
 api.set(debian.id, debian.api);
 api.set(docker.id, docker.api);
